@@ -34,8 +34,13 @@ variable "ssh_ports" {
 }
 
 variable "ssh_source_cidr" {
-  description = "Trusted public IP/CIDR allowed to SSH (for example 203.0.113.10/32). Do not use 0.0.0.0/0."
+  description = "Trusted public IP/CIDR allowed to SSH, e.g. your public IPv4 /32. Open Internet /0 is forbidden."
   type        = string
+
+  validation {
+    condition     = can(cidrnetmask(var.ssh_source_cidr)) && var.ssh_source_cidr != "0.0.0.0/0"
+    error_message = "ssh_source_cidr must be a restricted IPv4 CIDR; 0.0.0.0/0 is not permitted."
+  }
 }
 
 variable "admin_username" {
