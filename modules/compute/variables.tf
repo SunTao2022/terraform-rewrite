@@ -11,23 +11,20 @@ variable "subnet_id" {
 }
 
 variable "vm_base_name" {
-    type = string
+  type    = string
   default = "tfvm"
 }
 
 variable "vm_size" {
-    type = string
+  type    = string
   default = "Standard_B2ts_v2"
 }
 
 variable "admin_username" {
-  type = string
+  type    = string
   default = "azureuser"
 }
 
 variable "ssh_key_path" {
   type = string
 }
-
-
-

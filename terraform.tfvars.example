@@ -1,0 +1,15 @@
+# Example values only. Replace these in your local terraform.tfvars.
+rg_name          = "terraform-rewrite-rg"
+rg_location      = "canadacentral"
+vnet_name        = "rewrite-vnet"
+address_space    = ["10.0.0.0/16"]
+subnet_name      = "rewrite-subnet"
+nsg_name         = "rewrite-nsg"
+ssh_ports        = [22]
+# Documentation-only IP: replace with YOUR trusted public IPv4 /32 before applying.
+ssh_source_cidr  = "203.0.113.10/32"
+admin_username   = "azureuser"
+ssh_public_key_path = "/path/to/your/id_ed25519.pub"
+vm_base_name     = "tfvm"
+# Supply Azure client/tenant/subscription credentials separately (environment variables)
+# or in a local ignored terraform.tfvars. Never commit real secrets.

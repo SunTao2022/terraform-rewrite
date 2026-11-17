@@ -1,16 +1,15 @@
-# Terraform
+# Terraform working directory and local state
 .terraform/
 *.tfstate
-*.tfstate.backup
-.terraform.lock.hcl
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+*.tfplan
+crash.log
+crash.*.log
 
-# 敏感变量
-terraform.tfvars
-
-# Python
+# Python / editor / OS
 __pycache__/
 *.pyc
-
-# OS
 .DS_Store
 Thumbs.db
